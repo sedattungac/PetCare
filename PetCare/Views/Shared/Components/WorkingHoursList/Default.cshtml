@@ -1,0 +1,28 @@
+﻿@using EntityLayer.Concrete
+@model List<WorkingHour>
+<div class="col-xl-6">
+    <div class="working-hours-box" style="background-image: url(/mehedi.asiandevelopers.com/demo/carepress/assets/images/resources/working-hours-box-bg.jpg)">
+        <div class="inner-content">
+            <div class="title">
+                <h3>Çalışma Saatlerimiz<span></span></h3>
+                <p>Uzman hekim kadrolarımızla evcil dostlarınızın hizmetinizdeyiz.</p>
+            </div>
+            <ul>
+                @foreach (var item in Model)
+                {
+                    if (item.Day != "Pazar")
+                    {
+                        <li><span class="left">@item.Day</span> <span class="right">@item.Hour</span></li>
+
+                    }
+                    else
+                    {
+                        <li><span class="left">@item.Day</span> <span class="right holiday">@item.Hour</span></li>
+
+                    }
+                }
+
+            </ul>
+        </div>
+    </div>
+</div>

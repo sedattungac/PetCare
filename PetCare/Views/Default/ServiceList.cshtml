@@ -1,0 +1,25 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Service>
+<div class="col-xl-3 col-lg-4">
+    <div class="service-details-sidebar">
+        <div class="service-details-categories">
+            <div class="title">
+                <h3>Servislerimiz<span class="dotted"></span></h3>
+            </div>
+            <div class="categories-box">
+                <ul class="categories clearfix">
+                    @foreach (var value in Model)
+                    {
+                        <li><a href="ser-pet-grooming.html">@value.Title</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="callto-action-box text-center" style="background-image: url(assets/images/resources/callto-action-box-bg.jpg)">
+            <p>Bize Ulaşın</p>
+            <h3>"Hayvana saygının başladığı yer”</h3>
+            <a class="btn-one" href="#"><span class="txt">İletişim</span></a>
+        </div>
+
+    </div>
+</div>

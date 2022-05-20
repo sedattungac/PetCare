@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.Faq
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h3 class="mb-0">SSS Düzenleme Sayfası</h3>
+</div>
+<hr />
+<div class="row">
+    <div class="container-fluid col-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FaqId" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Soru</label>
+                <textarea rows="5" asp-for="Title" class="form-control"></textarea>
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Cevap</label>
+                <textarea rows="10" asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group float-left">
+                <a class="btn btn-primary btn-sm" asp-action="Index">Listeye Geri Gön</a>
+            </div>
+            <div class="form-group float-right">
+                <input type="submit" value="Kaydet" class="btn btn-primary btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>
+

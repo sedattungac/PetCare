@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TemplateLayout.cshtml";
+}
+
+@await Component.InvokeAsync("FeatureList")
+@await Component.InvokeAsync("FeaturedBox")
+@await Component.InvokeAsync("AboutUs")
+@await Component.InvokeAsync("ServiceList")
+
+<!--Start Feautres Area-->
+<section class="service-style2-area">
+    <div class="zikjak" style="background-image: url(/mehedi.asiandevelopers.com/demo/carepress/assets/images/shape/zikjak.png)"></div>
+
+    <div class="container">
+        <div class="row">
+
+            @await Component.InvokeAsync("WorkingHoursList")
+
+            <div class="col-xl-6">
+                <div class="feautres-content-box">
+                    <div class="sec-title">
+                        <h5>//<span>Feautres</span>//</h5>
+                        <h2>Neden Bizi Tercih Etmelisiniz?<span class="round-box zoominout"></span></h2>
+                    </div>
+                    <div class="inner-content">
+                        <div class="text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+
+                        <ul class="top">
+                            <li>
+                                <div class="inner">
+                                    <div class="icon">
+                                        <span class="icon-vet"></span>
+                                    </div>
+                                    <div class="title">
+                                        <h3>Bakıcılık</h3>
+                                        <p>Get a solid solution</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inner">
+                                    <div class="icon">
+                                        <span class="icon-injection"></span>
+                                    </div>
+                                    <div class="title">
+                                        <h3>Sağlık</h3>
+                                        <p>Get a solid solution</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <ul class="bottom">
+                            <li>
+                                <div class="inner">
+                                    <div class="icon">
+                                        <span class="icon-veterinary"></span>
+                                    </div>
+                                    <div class="title">
+                                        <h3>Tımar</h3>
+                                        <p>Get a solid solution</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inner">
+                                    <div class="icon">
+                                        <span class="icon-vaccine"></span>
+                                    </div>
+                                    <div class="title">
+                                        <h3>Aylık Aşılar</h3>
+                                        <p>Get a solid solution</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--End Feautres Area-->
+<!--Start Blog Style2 Area-->
+@await Component.InvokeAsync("BlogList")
+
+
+
+

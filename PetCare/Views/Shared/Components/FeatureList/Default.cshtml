@@ -1,0 +1,31 @@
+﻿@using EntityLayer.Concrete
+@model List<Feature>
+<section class="main-slider style2" style="background-image: url(/mehedi.asiandevelopers.com/demo/carepress/assets/images/slides/main-slider-style2-bg.png)">
+    <div class="banner-curve"></div>
+
+    <div class="container">
+
+        <div class="content text-center clearfix">
+            @*<div class="video-holder-box-style2 wow zoomIn animated" data-wow-delay="0.5s" data-wow-duration="1500ms">
+                    <div class="icon">
+                        <a class="video-popup thm-bgclr" title="CarePress Video Gallery" href="https://www.youtube.com/watch?v=a5uQMwRMHcs&list=RDa5uQMwRMHcs&start_radio=1&ab_channel=DaftPunkVEVO">
+                            <span class="icon-play-button-1"></span>
+                        </a>
+                    </div>
+                </div>*@
+            @foreach (var item in Model)
+            {
+                <h5 class="wow slideInUp animated" data-wow-delay="0.6s" data-wow-duration="1500ms">//<span>@item.Header</span>//</h5>
+                <div class="container-fluid float-right">
+                    <h2 class="wow slideInUp animated" data-wow-delay="0.8s" data-wow-duration="1500ms">@item.Sentence<span class="round"></span></h2>
+
+                </div>
+
+                @*<h5 class="wow slideInUp animated" data-wow-delay="0.6s" data-wow-duration="1500ms">//<span>Enjoy Your Holiday</span>//</h5>
+                    <h2 class="wow slideInUp animated" data-wow-delay="0.8s" data-wow-duration="1500ms">Get WorldClass<br> Grooming Service<span class="round"></span></h2>*@
+            }
+        </div>
+
+    </div>
+
+</section>

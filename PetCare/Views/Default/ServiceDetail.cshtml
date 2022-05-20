@@ -1,0 +1,62 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Service>
+@{
+    ViewData["Title"] = "ServiceDetail";
+    Layout = "~/Views/Shared/_TemplateLayout.cshtml";
+}
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area" style="background-image: url(/mehedi.asiandevelopers.com/demo/carepress/assets/images/breadcrumb/breadcrumb-1.png);">
+    <div class="banner-curve"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="inner-content clearfix text-center">
+                    <div class="title wow slideInUp animated" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                        <h2>@ViewBag.header<span class="dotted"></span></h2>
+                    </div>
+                    <div class="breadcrumb-menu wow slideInDown animated" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                        <ul class="clearfix">
+                            <li><a href="index.html">Anasayfa</a></li>
+                            <li class="active">Servis Detayı</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!--Start Service Details Area-->
+<section class="service-details-area">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-9 col-lg-8">
+                    <div class="service-details-content">
+                        <div class="service-details-main-image">
+                            <img src="@item.ImageUrl" alt="">
+                            <div class="overlay-box">
+                                <div class="icon">
+                                    <span class="icon-vaccine"></span>
+                                </div>
+                                <div class="title">
+                                    <h3>Monthly Care</h3>
+                                    <p>Get a solid solution</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-details-text-box">
+                            <h2>@item.Title<span class="dotted"></span></h2>
+                            <p>@item.LongDescription</p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+            @await Html.PartialAsync("ServiceList")
+
+        </div>
+    </div>
+</section>
+<!--End Service Details Area-->

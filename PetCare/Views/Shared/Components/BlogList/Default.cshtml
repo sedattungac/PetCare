@@ -1,0 +1,32 @@
+﻿@using EntityLayer.Concrete
+@model List<Blog>
+<section class="service-style2-area">
+    <div class="zikjak" style="background-image: url(/mehedi.asiandevelopers.com/demo/carepress/assets/images/shape/zikjak.png)"></div>
+
+    <div class="container">
+        <div class="sec-title text-center">
+            <h5>//<span>Yazılarımız</span>//</h5>
+            <h2>Makaleler<span class="round-box zoominout"></span></h2>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-4 col-lg-12">
+                    <div class="single-blog-style1 style1instyle2 wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                        <div class="overlay-bg" style="background-image: url(@item.ImageUrl) "></div>
+                        <div class="text-holder">
+                            <ul class="meta-info">
+                                <li><span class="icon-user"></span><a href="#">@item.Admin.FullName</a></li>
+                                <li><span class="icon-tag"></span><a href="#">@item.BlogCategory.Title</a></li>
+                            </ul>
+                            <h3 class="blog-title"><a href="blog-single.html">@item.Title<span class="round-box zoominout"></span></a></h3>
+                            <div class="text">
+                                <p>@item.Description.Substring(0, item.Description.Substring(0, 200).LastIndexOf(" "))...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

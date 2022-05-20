@@ -1,0 +1,35 @@
+﻿@using EntityLayer.Concrete
+@model List<Service>
+<section class="service-style2-area">
+    <div class="zikjak" style="background-image: url(/mehedi.asiandevelopers.com/demo/carepress/assets/images/shape/zikjak.png)"></div>
+    <div class="container">
+        <div class="sec-title text-center">
+            <h5>//<span>Hizmetlerimiz</span>//</h5>
+            <h2>Neler Yapıyoruz?<span class="round-box zoominout"></span></h2>
+        </div>
+        <div class="row">
+            <!--Start Single Service Style2-->
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="single-service-style2" data-aos="fade-up">
+                        <div class="inner-box">
+                            <div class="big-text">01</div>
+                            <div class="icon-holder">
+                                <img src="@item.Icon" alt="Icon">
+                            </div>
+                            <div class="text-holder">
+                                <h3><a href="#">@item.Title</a></h3>
+                                <p>@item.Description</p>
+                                <div class="button">
+                                    <a href="#">Daha Fazla</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,77 @@
+﻿@model EntityLayer.Concrete.Admin
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h3 class="mb-0">Kullanıcı Düzenleme Sayfası</h3>
+</div>
+<hr />
+<div class="row">
+    <div class="container-fluid col-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AdminId" />
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label">Ad Soyad</label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label">Kullanıcı Adı</label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Şifre</label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telephone" class="control-label">Telefon</label>
+                <input asp-for="Telephone" class="form-control" />
+                <span asp-validation-for="Telephone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label">Resim</label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Mail</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FacebookUrl" class="control-label">Facebook Adresi</label>
+                <input asp-for="FacebookUrl" class="form-control" />
+                <span asp-validation-for="FacebookUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InstagramUrl" class="control-label">İnstagram Adresi</label>
+                <input asp-for="InstagramUrl" class="form-control" />
+                <span asp-validation-for="InstagramUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LinkedInUrl" class="control-label">Linkedin Adresi</label>
+                <input asp-for="LinkedInUrl" class="form-control" />
+                <span asp-validation-for="LinkedInUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TwitterUrl" class="control-label">Twitter Adresi</label>
+                <input asp-for="TwitterUrl" class="form-control" />
+                <span asp-validation-for="TwitterUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group float-left">
+                <a class="btn btn-primary btn-sm" asp-action="Index">Listeye Geri Gön</a>
+            </div>
+            <div class="form-group float-right">
+                <input type="submit" value="Kaydet" class="btn btn-primary btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

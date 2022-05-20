@@ -1,0 +1,96 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+<section class="about-style1-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-7">
+                <div class="about-style1-image-box">
+                    <div class="about-style1-image-box-bg" style="background-image: url(/mehedi.asiandevelopers.com/demo/carepress/assets/images/shape/about-style1-image-box-bg.png)"></div>
+                    <div class="main-image">
+                        <img src="~/mehedi.asiandevelopers.com/demo/carepress/assets/images/about/about-1.png" alt="Awesome Image">
+                    </div>
+                    <div class="about-experience-box">
+                        <div class="count-box">
+                            <h2>
+                                <span class="timer" data-from="1" data-to="20" data-speed="5000" data-refresh-interval="50">1020</span>
+                                <span class="icon-plus plus-icon"></span>
+                            </h2>
+                            <h5>Yıllık Deneyim</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-5">
+                @foreach(var item in Model)
+            {
+                <div class="about-style1-content-box">
+                    <div class="sec-title">
+                        <h5>//<span>Hakkımızda</span>//</h5>
+                        <h2>@item.Title<span class="round-box zoominout"></span></h2>
+                    </div>
+                    <div class="inner-content">
+                        <div class="text">
+                        <p>@item.Descripton</p>    
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <ul>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-tick"></span>
+                                        </div>
+                                        <div class="title">
+                                            <h5>Sertifikalı Bakıcı</h5>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-xl-6">
+                                <ul>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-tick"></span>
+                                        </div>
+                                        <div class="title">
+                                            <h5>Hayvan Severlik</h5>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-xl-6">
+                                <ul>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-tick"></span>
+                                        </div>
+                                        <div class="title">
+                                            <h5>14+ Yıllık Tecrübe</h5>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-xl-6">
+                                <ul>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-tick"></span>
+                                        </div>
+                                        <div class="title">
+                                            <h5>Titizlik</h5>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+            }
+                
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,68 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+@{
+    ViewData["Title"] = "AboutUs";
+    Layout = "~/Views/Shared/_TemplateLayout.cshtml";
+}
+
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area" style="background-image: url(/mehedi.asiandevelopers.com/demo/carepress/assets/images/breadcrumb/breadcrumb-1.png);">
+    <div class="banner-curve"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="inner-content clearfix text-center">
+                    <div class="title wow slideInUp animated" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                        <h2>Hakkımızda<span class="dotted"></span></h2>
+                    </div>
+                    <div class="breadcrumb-menu wow slideInDown animated" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                        <ul class="clearfix">
+
+                            <li>Anasayfa</li>
+                            <li class="active">Hakkımızda</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!--Start About Style2 Area-->
+<section class="about-style2-area">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-5">
+                    <div class="about-style1-content-box style1instyle2">
+                        <div class="sec-title">
+                            <h5>//<span>Hakkımızda</span>//</h5>
+                            <h2>@item.Title<span class="round-box zoominout"></span></h2>
+                        </div>
+                        <div class="inner-content">
+                            <div class="text">
+                                <p>@item.Descripton</p>
+                            </div>
+                            <div class="button-box">
+                                <a class="btn-one" href="/Default/Contact"><span class="txt">Bize Ulaşın</span></a>
+                                <a class="btn-one style2 marleft" href="tel:123456789">
+                                    <i class="fa fa-phone" aria-hidden="true"></i><span class="txt">987-876-876-87</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+            <div class="col-xl-7">
+                <div class="mt-5 video-holder-box  style2 text-center" style="border:2px solid white; border-radius:25px; background-image: url(/mehedi.asiandevelopers.com/demo/carepress/assets/images/resources/video-gallery-bg-2.jpg)">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--End About Style2 Area-->

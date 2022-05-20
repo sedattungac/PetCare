@@ -1,0 +1,56 @@
+﻿@model EntityLayer.Concrete.Blog
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h3 class="mb-0">Makale Düzenleme Sayfası</h3>
+</div>
+<hr />
+<div class="row">
+    <div class="container-fluid col-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BlogId" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" rows="10" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="AdminId" class="control-label">Hekim Seçiniz</label>
+                <select asp-for="AdminId" class="form-control text-dark" asp-items="ViewBag.list2"></select>
+                <span asp-validation-for="AdminId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BlogCategoryId" class="control-label">Kategori Seçiniz</label>
+                <select asp-for="BlogCategoryId" class="form-control text-dark" asp-items="ViewBag.list1"></select>
+                <span asp-validation-for="BlogCategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group float-left">
+                <a class="btn btn-primary btn-sm" asp-action="Index">Listeye Geri Gön</a>
+            </div>
+            <div class="form-group float-right">
+                <input type="submit" value="Kaydet" class="btn btn-primary btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>
+

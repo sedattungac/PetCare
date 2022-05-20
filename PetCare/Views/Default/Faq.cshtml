@@ -1,0 +1,57 @@
+﻿@using EntityLayer.Concrete
+@model List<Faq>
+@{
+    ViewData["Title"] = "Faq";
+    Layout = "~/Views/Shared/_TemplateLayout.cshtml";
+}
+
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area" style="background-image: url(/mehedi.asiandevelopers.com/demo/carepress/assets/images/breadcrumb/breadcrumb-1.png);">
+    <div class="banner-curve"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="inner-content clearfix text-center">
+                    <div class="title wow slideInUp animated" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                        <h2>Sıkça Sorulan Sorular<span class="dotted"></span></h2>
+                    </div>
+                    <div class="breadcrumb-menu wow slideInDown animated" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                        <ul class="clearfix">
+                            <li><a href="/Default/Index">Anasayfa</a></li>
+                            <li class="active">SSS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!--Start Faq Page Area-->
+<section class="faq-page-area">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-12">
+                    <div class="faq-left-content-box">
+                        <div class="accordion-box">
+                            <div class="accordion accordion-block">
+                                <div class="accord-btn"><h4>@item.Title</h4></div>
+                                <div class="accord-content">
+                                    <p>@item.Description</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            }
+
+
+
+
+        </div>
+    </div>
+</section>
+<!--End Faq Page Area-->

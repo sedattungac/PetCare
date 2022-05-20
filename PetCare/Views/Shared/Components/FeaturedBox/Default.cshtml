@@ -1,0 +1,26 @@
+﻿@using EntityLayer.Concrete
+@model List<FeaturedBox>
+<section class="featured-area">
+    <div class="container">
+        <div class="row">
+            <!--Start Single Featured Box-->
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-4">
+                    <div class="single-featured-box">
+                        <div class="inner">
+                            <div class="icon">
+                                <span class="@item.Icon"></span>
+                            </div>
+                            <div class="text">
+                                <h3>@item.Title</h3>
+                                <p>@item.Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>

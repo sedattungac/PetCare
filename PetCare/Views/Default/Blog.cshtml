@@ -1,0 +1,68 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+
+@model IPagedList<EntityLayer.Concrete.Blog>
+@{
+    ViewData["Title"] = "Blog";
+    Layout = "~/Views/Shared/_TemplateLayout.cshtml";
+}
+
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area" style="background-image: url(/mehedi.asiandevelopers.com/demo/carepress/assets/images/breadcrumb/breadcrumb-1.png);">
+    <div class="banner-curve"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="inner-content clearfix text-center">
+                    <div class="title wow slideInUp animated" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                        <h2>Makaleler<span class="dotted"></span></h2>
+                    </div>
+                    <div class="breadcrumb-menu wow slideInDown animated" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                        <ul class="clearfix">
+                            <li><a href="/Default/Index">Anasayfa</a></li>
+                            <li class="active">Makaleler</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!--Start Blog Style2 Area-->
+<section id="blog-area" class="blog-grid-area">
+    <div class="container">
+        <div class="row">
+            <!--Start Single blog Style1-->
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="single-blog-style1 wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
+                        <div class="img-holder">
+                            <div class="date-box"><h5>@(((DateTime)item.Date).ToString("dd MMMMMMM yyyy"))</h5></div>
+                            <div class="inner">
+                                <img src="@item.ImageUrl" alt="Awesome Image">
+                            </div>
+                        </div>
+                        <div class="text-holder">
+                            <ul class="meta-info">
+                                <li><span class="icon-user"></span><a href="#">@item.Admin.FullName</a></li>
+                                <li><span class="icon-tag"></span><a href="#">@item.BlogCategory.Title</a></li>
+                            </ul>
+                            <h3 class="blog-title"><a href="/Default/BlogDetail/@item.BlogId">@item.Description.Substring(0, item.Description.Substring(0, 100).LastIndexOf(" "))...<span class="round-box zoominout"></span></a></h3>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <!--End Single blog Style1-->
+        </div>
+
+        <div class="row">
+            <div class="col-xl-12 d-flex justify-content-center">
+                @Html.PagedListPager((IPagedList)Model, page => Url.Action("Blog", new { page }))
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Blog Style2 Area-->

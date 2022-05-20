@@ -1,0 +1,229 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Blog>
+@{
+    ViewData["Title"] = "BlogDetail";
+    Layout = "~/Views/Shared/_TemplateLayout.cshtml";
+}
+
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area" style="background-image: url(/mehedi.asiandevelopers.com/demo/carepress/assets/images/breadcrumb/breadcrumb-1.png);">
+    <div class="banner-curve-gray"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="inner-content clearfix text-center">
+                    <div class="title wow slideInUp animated" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                        <h2>@ViewBag.header<span class="dotted"></span></h2>
+                    </div>
+                    <div class="breadcrumb-menu wow slideInDown animated" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                        <ul class="clearfix">
+                            <li><a href="/Default/Index">Anasayfa</a></li>
+                            <li class="active">@ViewBag.header</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!--Start Blog Style2 Area-->
+<section id="blog-area" class="blog-single-area">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-8 col-lg-7">
+                    <div class="blog-posts">
+                        <div class="single-blog-style2">
+                            <div class="text-holder">
+                                <!--Start Blog Details Single-->
+                                <div class="blog-details-single">
+                                    <div class="categories">
+                                        <h5>@ViewBag.category</h5>
+                                    </div>
+                                    <h2 class="blog-title">@item.Title</h2>
+                                    <ul class="meta-info">
+                                        <li><span class="icon-user"></span><a href="#">@ViewBag.writer</a></li>
+                                        <li><span class="icon-calendar"></span><a href="#">@(((DateTime)item.Date).ToString("dd MMMMMMM yyyy"))</a></li>
+                                        @*<li><span class="icon-chat"></span><a href="#">35 Comments</a></li>*@
+                                    </ul>
+                                    <div class="text">
+                                        <p>@item.Description</p>
+                                    </div>
+
+                                    <div class="blog-details-image-1">
+                                        <img src="@item.ImageUrl" alt="">
+                                    </div>
+                                </div>
+                                <!--End Blog Details Single-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            <!--Start sidebar Wrapper-->
+
+            <div class="col-xl-4 col-lg-5 col-md-9 col-sm-12">
+                <div class="sidebar-wrapper">
+                    <div class="single-sidebar wow fadeInUp animated" data-wow-delay="0.0s" data-wow-duration="1200ms">
+                        <div class="sidebar-about-me-box text-center">
+                            <div class="title">
+                                <h3>Hakkımda</h3>
+                            </div>
+                            <div class="image-box">
+                                <img src="@ViewBag.image" alt="Awesome Image" />
+                            </div>
+                            <div class="text-holder">
+                                <h3>@ViewBag.writer</h3>
+                                <p>Hekimlerimize sosyal medya bağlantıları üzerinden ulaşabilirsiniz.</p>
+                                <div class="sidebar-social-link">
+                                    <ul>
+
+                                        <li>
+                                            <a target="_blank" aria-hidden="true" href="mailto:@ViewBag.mail"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" aria-hidden="true" href="@ViewBag.facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        </li>
+
+                                        <li>
+                                            <a target="_blank" aria-hidden="true" href="@ViewBag.instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" aria-hidden="true" href="@ViewBag.twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" aria-hidden="true" href="@ViewBag.linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Start single sidebar-->
+                    <!--<div class="single-sidebar wow fadeInUp animated" data-wow-delay="0.2s" data-wow-duration="1200ms">
+                        <div class="title">
+                            <h3>Popular Feeds</h3>
+                        </div>
+                        <ul class="popular-feeds">
+                            <li>
+                                <div class="inner">
+                                    <div class="img-box">
+                                        <img src="~/mehedi.asiandevelopers.com/demo/carepress/assets/images/sidebar/popular-feeds-1.png" alt="Awesome Image">
+                                        <div class="overlay-content">
+                                            <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="title-box">
+                                        <h4><a href="#">Lorem ipsum dolor sit<br> cing elit, sed do.</a></h4>
+                                        <h6><span class="icon-calendar-1"></span>24th March 2019</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inner">
+                                    <div class="img-box">
+                                        <img src="~/mehedi.asiandevelopers.com/demo/carepress/assets/images/sidebar/popular-feeds-2.png" alt="Awesome Image">
+                                        <div class="overlay-content">
+                                            <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="title-box">
+                                        <h4><a href="#">Lorem ipsum dolor sit<br> cing elit, sed do.</a></h4>
+                                        <h6><span class="icon-calendar-1"></span>24th March 2019</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inner">
+                                    <div class="img-box">
+                                        <img src="~/mehedi.asiandevelopers.com/demo/carepress/assets/images/sidebar/popular-feeds-3.png" alt="Awesome Image">
+                                        <div class="overlay-content">
+                                            <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="title-box">
+                                        <h4><a href="#">Lorem ipsum dolor sit<br> cing elit, sed do.</a></h4>
+                                        <h6><span class="icon-calendar-1"></span>24th March 2019</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inner">
+                                    <div class="img-box">
+                                        <img src="~/mehedi.asiandevelopers.com/demo/carepress/assets/images/sidebar/popular-feeds-4.png" alt="Awesome Image">
+                                        <div class="overlay-content">
+                                            <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="title-box">
+                                        <h4><a href="#">Lorem ipsum dolor sit<br> cing elit, sed do.</a></h4>
+                                        <h6><span class="icon-calendar-1"></span>24th March 2019</h6>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>-->
+                    <!--End single sidebar-->
+                    <!--Start sidebar categories Box-->
+                    <!--<div class="single-sidebar wow fadeInUp animated" data-wow-delay="0.4s" data-wow-duration="1200ms">
+                        <div class="title">
+                            <h3>Never Miss News</h3>
+                        </div>
+                        <ul class="sidebar-social-links">
+                            <li>
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>-->
+                    <!--End sidebar categories Box-->
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar wow fadeInUp animated" data-wow-delay="0.7s" data-wow-duration="1200ms">
+                        <div class="title">
+                            <h3>Popular Tags</h3>
+                        </div>
+                        <ul class="popular-tag">
+                            <li><a href="#">popular</a></li>
+                            <li><a href="#">desgin</a></li>
+                            <li><a href="#">ux</a></li>
+                            <li><a href="#">mouse</a></li>
+                            <li><a href="#">dog</a></li>
+                            <li><a href="#">animal</a></li>
+                            <li><a href="#">life</a></li>
+                            <li><a href="#">cat</a></li>
+                            <li><a href="#">medicine</a></li>
+                            <li><a href="#">hospital</a></li>
+                            <li><a href="#">care</a></li>
+                            <li><a href="#">hamster</a></li>
+                            <li><a href="#">bird</a></li>
+                            <li><a href="#">rabbit</a></li>
+                            <li><a href="#">grooming</a></li>
+                        </ul>
+                    </div>
+                    <!--End single sidebar-->
+
+
+
+                </div>
+            </div>
+
+
+            <!--End Sidebar Wrapper-->
+
+        </div>
+    </div>
+</section>
+<!--End Blog Style2 Area-->

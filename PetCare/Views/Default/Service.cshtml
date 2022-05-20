@@ -1,0 +1,59 @@
+﻿@using EntityLayer.Concrete
+@model List<Service>
+@{
+    ViewData["Title"] = "Service";
+    Layout = "~/Views/Shared/_TemplateLayout.cshtml";
+}
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area style2" style="background-image: url(/mehedi.asiandevelopers.com/demo/carepress/assets/images/breadcrumb/breadcrumb-1.png);">
+    <div class="banner-curve"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="inner-content clearfix text-center">
+                    <div class="title wow slideInUp animated" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                        <h2>Hizmetlerimiz<span class="dotted"></span></h2>
+                    </div>
+                    <div class="breadcrumb-menu wow slideInDown animated" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                        <ul class="clearfix">
+                            <li><a href="/Default/Index">Anasayfa</a></li>
+                            <li class="active">Hizmetlerimiz</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!-- Start Service Style1 Area -->
+<section class="service-style1-area service-page">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div class="single-service-style1">
+                        <div class="img-holder">
+                            <div class="inner">
+                                <img src="@item.ImageUrl" alt="">
+                            </div>
+                        </div>
+                        <div class="text-holder">
+                            <h3>@item.Title<a href="ser-pet-grooming.html"></a></h3>
+                            <p>@item.Description </p>
+                            <div class="button">
+                                <a href="/Default/ServiceDetail/@item.ServiceId">Daha Fazla</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+
+        </div>
+
+    </div>
+</section>
+<!-- End Service Style1 Area -->

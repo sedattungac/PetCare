@@ -1,0 +1,32 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Blog>
+
+@foreach (var item in Model)
+{
+<div class="col-xl-8 col-lg-7">
+    <div class="blog-posts">
+        <div class="single-blog-style2">
+            <div class="text-holder">
+                <!--Start Blog Details Single-->
+                <div class="blog-details-single">
+                    <div class="categories">
+                        <h5>@ViewBag.category</h5>
+                    </div>
+                    <h2 class="blog-title">@item.Title</h2>
+                    <ul class="meta-info">
+                        <li><span class="icon-user"></span><a href="#">@ViewBag.writer</a></li>
+                        <li><span class="icon-calendar"></span><a href="#">@(((DateTime)item.Date).ToString("dd MMMMMMM yyyy"))</a></li>
+                        <li><span class="icon-chat"></span><a href="#">35 Comments</a></li>
+                    </ul>
+                    <div class="text">
+                        <p>@item.Description</p>
+                    </div>
+
+                    <div class="blog-details-image-1">
+                        <img src="@item.ImageUrl" alt="">
+                    </div>
+                </div>
+                <!--End Blog Details Single-->
+            </div>
+        </div>
+    </div>
+</div>}
