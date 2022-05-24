@@ -1,0 +1,44 @@
+﻿@model EntityLayer.Concrete.FeaturedBox
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h3 class="mb-0">Hizmet Düzenleme Sayfası</h3>
+</div>
+<hr />
+<div class="row">
+    <div class="container-fluid col-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FeaturedBoxId" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Başlık</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">İçerik</label>
+                <textarea rows="4" asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div>
+                    <label asp-for="Icon" class="control-label">Icon</label> &nbsp;
+                    <a target="_blank" href="https://fontawesome.com/v3/icons/" class="btn btn-success btn-sm float-right"><i class="mdi mdi-information"></i> İcon Listesi için tıklayınız</a>
+                </div>
+                <br />
+                <input asp-for="Icon" class="form-control" />
+                <span asp-validation-for="Icon" class="text-danger"></span>
+            </div>
+            <div class="form-group float-left">
+                <a class="btn btn-primary btn-sm" asp-action="Index">Listeye Geri Gön</a>
+            </div>
+            <div class="form-group float-right">
+                <input type="submit" value="Kaydet" class="btn btn-primary btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>

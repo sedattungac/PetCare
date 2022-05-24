@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.WorkingHour
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h3 class="mb-0">Çalışma Saati Düzenleme Sayfası</h3>
+</div>
+<hr />
+<div class="row">
+    <div class="container-fluid col-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="WorkingHourId" />
+            <div class="form-group">
+                <label asp-for="Day" class="control-label">Gün</label>
+                <input asp-for="Day" class="form-control" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hour" class="control-label">Çalışma Saati</label>
+                <input asp-for="Hour" class="form-control" />
+                <span asp-validation-for="Hour" class="text-danger"></span>
+            </div>
+            <div class="form-group float-left">
+                <a class="btn btn-primary btn-sm" asp-action="Index">Listeye Geri Gön</a>
+            </div>
+            <div class="form-group float-right">
+                <input type="submit" value="Kaydet" class="btn btn-primary btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>
+

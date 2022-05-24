@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.Feature
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h3 class="mb-0">Önce Çıkan 1</h3>
+</div>
+<hr />
+<div class="row">
+    <div class="container-fluid col-12">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FeatureId" />
+            <div class="form-group">
+                <label asp-for="Header" class="control-label">Başlık</label>
+                <input asp-for="Header" class="form-control" />
+                <span asp-validation-for="Header" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sentence" class="control-label">İçerik</label>
+                <textarea asp-for="Sentence" class="form-control" rows="10"></textarea>
+                <span asp-validation-for="Sentence" class="text-danger"></span>
+            </div>
+            <div class="form-group float-right">
+                <input type="submit" value="Kaydet" class="btn btn-primary btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>
+

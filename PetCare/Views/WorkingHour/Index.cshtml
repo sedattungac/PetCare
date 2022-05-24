@@ -1,5 +1,5 @@
 ﻿@using EntityLayer.Concrete
-@model List<Contact>
+@model List<WorkingHour>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -10,7 +10,7 @@
         <div class="card-body">
             <div>
                 <div class="float-left">
-                    <h4 class="card-title">İletişim</h4>
+                    <h4 class="card-title">Çalışma Saati Listesi</h4>
 
                 </div>
             </div>
@@ -19,19 +19,10 @@
                     <thead>
                         <tr>
                             <th>
-                                Ad Soyad
+                                Gün
                             </th>
                             <th>
-                                Mail
-                            </th>
-                            <th>
-                                Konu
-                            </th>
-                            <th>
-                                Telefon
-                            </th>
-                            <th>
-                                Mesaj
+                                Çalışma Saati
                             </th>
                             <th>
                                 Menü
@@ -42,17 +33,12 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.FullName</td>
-                                <td>@item.Email</td>
-                                <td>@item.Telephone</td>
                                 <td>
-                                    <a class="btn btn-outline-primary btn-sm" data-toggle="popover-hover" data-content="@item.Subject">Konu</a>
+                                    @item.Day
                                 </td>
+                                <td>@item.Hour</td>
                                 <td>
-                                    <a class="btn btn-outline-primary btn-sm" data-toggle="popover-hover" data-content="@item.Message">Mesaj</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-outline-danger btn-sm" href="/Contact/Delete/@item.ContactId"><i class="mdi mdi-delete"></i> Sil</a>
+                                    <a class="btn btn-outline-warning btn-sm" href="/WorkingHour/Edit/@item.WorkingHourId"><i class="mdi mdi-cog"></i> Düzenle</a>
                                 </td>
                             </tr>
                         }
@@ -64,6 +50,4 @@
         </div>
     </div>
 </div>
-
-
 
